@@ -1,0 +1,32 @@
+[
+  {
+    "name": "GPU Scheduler (5 fields, 3 inv, 2 trans)",
+    "avg_ms": 0.6,
+    "best_ms": 0.3,
+    "iterations": 3
+  },
+  {
+    "name": "Wide Spec (10 fields, 10 inv, 5 trans)",
+    "avg_ms": 13.9,
+    "best_ms": 5.4,
+    "iterations": 3
+  },
+  {
+    "name": "20-Invariant Spec (5 fields, 20 inv, 3 trans)",
+    "avg_ms": 2.5,
+    "best_ms": 2.4,
+    "iterations": 3
+  },
+  {
+    "name": "AST Extraction (GPU Scheduler)",
+    "avg_ms": 0.3,
+    "best_ms": 0.3,
+    "iterations": 100
+  },
+  {
+    "name": "Lowering (GPU Scheduler invariants)",
+    "avg_ms": 0.0,
+    "best_ms": 0.0,
+    "iterations": 100
+  }
+]

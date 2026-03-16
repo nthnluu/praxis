@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "praxis"
+version = "0.1.0"
+description = "Formal verification disguised as a test framework"
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = ["z3-solver"]
+
+[project.optional-dependencies]
+dev = ["pytest", "hypothesis"]
+
+[project.entry-points.pytest11]
+praxis = "praxis.pytest_plugin"
+
+[project.scripts]
+praxis = "praxis.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
