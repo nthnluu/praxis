@@ -1,0 +1,19 @@
+name: Praxis Verification
+on: [push, pull_request]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install praxis
+      - run: praxis check specs/ --format json > praxis-results.json
+      - run: praxis check specs/
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: praxis-results
+          path: praxis-results.json
